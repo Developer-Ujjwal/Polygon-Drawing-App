@@ -114,7 +114,7 @@ const handleSaveLabel = () => {
       <div className="space-y-4">
   <Card>
     <CardHeader>
-      <CardTitle className="text-lg">Export All</CardTitle>
+      <CardTitle className="text-lg">Export</CardTitle>
     </CardHeader>
     <CardContent className="space-y-3">
       <Input
@@ -128,7 +128,7 @@ const handleSaveLabel = () => {
         disabled={!folderName.trim() || isSaving}
       >
         <Download className="w-4 h-4 mr-2" />
-        Save All
+        Save
       </Button>
     </CardContent>
   </Card>
@@ -250,7 +250,7 @@ const handleSaveLabel = () => {
         {activePolygon && (
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg">Current Drawing</CardTitle>
+              <CardTitle className="text-lg">Polygon Labeling</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div>

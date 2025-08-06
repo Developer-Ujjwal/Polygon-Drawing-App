@@ -4,7 +4,7 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Polygon Drawing App',
+  title: 'Polygon Annotation App',
   description: 'Label and Draw Polygons',
 }
 
