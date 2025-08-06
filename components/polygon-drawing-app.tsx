@@ -17,6 +17,7 @@ export default function PolygonDrawingApp() {
     selectedPolygonId: null,
     backgroundImage: null,
   })
+  const [folderName, setFolderName] = useState('');
 
   const [currentLabel, setCurrentLabel] = useState("")
   const [history, setHistory] = useState<AppState[]>([])
@@ -211,11 +212,11 @@ export default function PolygonDrawingApp() {
       const url = URL.createObjectURL(blob)
       const link = document.createElement("a")
       link.href = url
-      link.download = `polygons-${Date.now()}.png`
+      link.download = `${folderName}.png`
       link.click()
       URL.revokeObjectURL(url)
     }, "image/png")
-  }, [])
+  }, [folderName])
 
   const handleSaveToFile = useCallback(() => {
     const dataStr = JSON.stringify(
@@ -230,7 +231,7 @@ export default function PolygonDrawingApp() {
     const url = URL.createObjectURL(dataBlob)
     const link = document.createElement("a")
     link.href = url
-    link.download = "polygons.json"
+    link.download = `${folderName}.json`
     link.click()
     URL.revokeObjectURL(url)
   }, [appState])
@@ -294,6 +295,8 @@ export default function PolygonDrawingApp() {
 
         {/* Sidebar */}
         <Sidebar
+          folderName={folderName}
+          setFolderName={setFolderName}
           polygons={appState.polygons}
           activePolygon={appState.activePolygon}
           backgroundImage={appState.backgroundImage}
